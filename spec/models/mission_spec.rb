@@ -12,9 +12,11 @@ describe Mission, type: :model do
   end
 
   describe "class methods" do
-    mission_1 = astro_1.missions.create(title: "Mars One", time_in_space: 500)
-    mission_2 = astro_1.missions.create(title: "Hubble Reconstruction", time_in_space: 100)
+    it "alphabetical" do
+      mission_1 = Mission.create(title: "Mars One", time_in_space: 500)
+      mission_2 = Mission.create(title: "Hubble Reconstruction", time_in_space: 100)
 
-    expect(Mission.alphabetical).to eq([mission_2, mission_1])
+      expect(Mission.alphabetical).to eq([mission_2, mission_1])
+    end 
   end
 end
