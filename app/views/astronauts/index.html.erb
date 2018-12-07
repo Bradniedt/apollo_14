@@ -4,4 +4,7 @@ Average Age: <%= Astronaut.average_age %>
   <p><%= astronaut.name %></p>
   <p><%= astronaut.age %></p>
   <p><%= astronaut.job %></p>
+  <p>Missions:</p> <% astronaut.missions.alphabetical.each do |miss| %>
+      <p class="missions"><%= miss.title %></p>
+    <% end %>
 <% end %>
